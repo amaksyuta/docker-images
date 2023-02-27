@@ -5,3 +5,4 @@ FROM mcr.microsoft.com/windows/servercore/iis:latest
 RUN powershell -Command Add-WindowsFeature Web-Server
 
 CMD [ "ping", "localhost", "-t" ]
+
