@@ -339,6 +339,11 @@ pipeline {
     agent {
         label "windocker || mainnode"
     }
+    parameters {
+        choice(name: 'ENVIRONMENT', choices: ['dev', 'prod'], description: 'Select environment to deploy')
+        choice(name: 'PLATFORM', choices: ['Windows', 'Linux'], description: 'Select platform to build for')
+    }
+
     stages {
         stage('Build on Linux') {
             agent {
